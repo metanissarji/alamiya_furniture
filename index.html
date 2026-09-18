@@ -197,7 +197,6 @@ body.switching main{opacity:0}
 .pbar .btn.done svg{animation:squish .5s var(--bounce)}
 .related{margin-top:56px}
 .related h2{font-size:1.7rem}
-body.on-product .dock{display:none}
 
 /* ---------- אולם תצוגה ---------- */
 .visit{background:var(--deep);color:#fff;margin-top:24px;border-radius:28px 28px 0 0}
@@ -208,21 +207,21 @@ body.on-product .dock{display:none}
 .vframe video{width:100%;height:100%;object-fit:cover}
 
 /* ---------- פוטר ---------- */
-footer{background:var(--deep);color:rgba(255,255,255,.75);padding:8px 0 120px;font-size:.92rem}
-body.on-product footer{border-radius:28px 28px 0 0;padding-top:28px}
+footer{background:var(--deep);color:rgba(255,255,255,.75);padding:8px 0 36px;font-size:.92rem}
+body.on-product footer{padding-bottom:110px}
+body.on-product footer{border-radius:28px 28px 0 0;padding-top:24px}
 footer .mark{--mf:#3FA3B1}
 footer .brand-t b{color:#7CC6CF}
 footer .brand-t span{color:#fff}
 .foot{border-top:1px solid rgba(255,255,255,.12);padding-top:28px;display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center;justify-content:space-between}
-body.on-product .foot{border-top:0;padding-top:0}
 .foot-links{display:flex;flex-wrap:wrap;gap:8px 20px}
 .foot-links a{text-decoration:none;display:inline-flex;align-items:center;gap:6px;color:#fff}
 .foot-links svg{width:20px;height:20px}
 .credit{margin-top:22px;font-size:.82rem;color:rgba(255,255,255,.5)}
 
 /* ---------- סרגל פעולות בנייד ---------- */
-.dock{position:fixed;z-index:45;inset-inline:12px;bottom:calc(12px + env(safe-area-inset-bottom));display:grid;grid-template-columns:1fr 1.3fr 1fr;gap:6px;padding:6px;border-radius:20px;background:rgba(255,255,255,.97);box-shadow:0 10px 30px rgba(11,40,45,.2),0 0 0 1px rgba(18,57,63,.06)}
-.dock a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:56px;border-radius:14px;text-decoration:none;font-weight:600;font-size:.82rem;color:var(--deep)}
+.dock{display:grid;grid-template-columns:1fr 1.3fr 1fr;gap:8px;margin-bottom:28px}
+.dock a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:64px;border-radius:16px;text-decoration:none;font-weight:600;font-size:.88rem;color:#fff;background:rgba(255,255,255,.08)}
 .dock a svg{width:23px;height:23px}
 .dock a.main{background:var(--cushion);color:var(--cushion-ink)}
 
@@ -280,7 +279,7 @@ dialog.sheet.closing{animation:sheetDown .25s ease-in forwards}
   .wrap{padding-inline:32px}
   .nav{display:flex}
   .dock{display:none}
-  footer{padding-bottom:40px}
+  footer,body.on-product footer{padding-bottom:40px}
   .sec{padding-block:96px}
   #models{padding-top:64px}
   .hero .btn{margin-top:22px}
@@ -434,6 +433,11 @@ dialog.sheet.closing{animation:sheetDown .25s ease-in forwards}
 
 <footer>
   <div class="wrap">
+    <nav class="dock" id="dock" aria-label="פעולות מהירות">
+    <a href="tel:+97246113110"><svg><use href="#i-phone"/></svg><span data-t="bar.call">חייגו</span></a>
+    <a class="main js-wa" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg><span data-t="bar.wa">וואטסאפ</span></a>
+    <a class="js-waze" href="#" target="_blank" rel="noopener"><svg><use href="#i-nav"/></svg><span data-t="bar.waze">נווטו</span></a>
+  </nav>
     <div class="foot">
       <a class="brand" href="#top">
         <svg class="mark" viewBox="0 0 120 80" aria-hidden="true"><use href="#logo"/><rect class="cush" x="22" y="10" width="36" height="37" rx="4"/><rect class="cush" x="62" y="10" width="36" height="37" rx="4"/></svg>
@@ -448,11 +452,6 @@ dialog.sheet.closing{animation:sheetDown .25s ease-in forwards}
   </div>
 </footer>
 
-<nav class="dock" id="dock" aria-label="פעולות מהירות">
-  <a href="tel:+97246113110"><svg><use href="#i-phone"/></svg><span data-t="bar.call">חייגו</span></a>
-  <a class="main js-wa" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg><span data-t="bar.wa">וואטסאפ</span></a>
-  <a class="js-waze" href="#" target="_blank" rel="noopener"><svg><use href="#i-nav"/></svg><span data-t="bar.waze">נווטו</span></a>
-</nav>
 
 <!-- חלונית סל -->
 <dialog class="sheet" id="cart" aria-labelledby="cartTitle">
