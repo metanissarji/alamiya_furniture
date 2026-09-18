@@ -90,7 +90,6 @@ body.switching main{opacity:0}
 .btn-primary{background:var(--cushion);color:var(--cushion-ink);box-shadow:0 6px 16px rgba(246,165,74,.35)}
 .btn-ghost{border-color:var(--teal);color:var(--teal);background:transparent}
 .btn-light{border-color:rgba(255,255,255,.5);color:#fff}
-.btn-block{width:100%}
 
 /* ---------- פתיח ---------- */
 .hero-img{height:44vh;height:44svh;min-height:280px;max-height:520px;overflow:hidden;border-radius:0 0 28px 28px}
@@ -113,46 +112,26 @@ body.switching main{opacity:0}
 .sec-head p{margin-top:8px;color:var(--muted)}
 
 /* ---------- דגמים ---------- */
-.grid{list-style:none;padding:0;margin:26px 0 0;display:grid;grid-template-columns:1fr;gap:18px}
-.card{display:block;width:100%;border:0;padding:0;background:var(--paper);border-radius:22px;overflow:hidden;text-align:start;transition:box-shadow .3s,transform .3s var(--ease)}
+.chips{display:flex;gap:8px;overflow-x:auto;margin:22px -20px 0;padding:2px 20px 6px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;min-height:44px;padding:0 16px;border-radius:999px;border:2px solid var(--line);background:var(--paper);font-weight:600;font-size:.95rem;color:var(--ink);transition:background .2s,border-color .2s,color .2s}
+.chip[aria-pressed="true"]{background:var(--teal);border-color:var(--teal);color:#fff}
+.grid{list-style:none;padding:0;margin:18px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid li[hidden]{display:none}
+.grid li.show{animation:cardIn .45s var(--ease) both;animation-delay:calc(var(--i,0)*50ms)}
+@keyframes cardIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.card{display:flex;flex-direction:column;width:100%;height:100%;border:0;padding:0;background:var(--paper);border-radius:18px;overflow:hidden;text-align:start;transition:box-shadow .3s,transform .3s var(--ease)}
 .card:hover{box-shadow:0 14px 34px rgba(18,57,63,.12);transform:translateY(-3px)}
-.card figure{position:relative;margin:0;aspect-ratio:1.6;overflow:hidden;background:#e3e9e8}
+.card figure{position:relative;margin:0;aspect-ratio:4/3;overflow:hidden;background:#e3e9e8}
 .card img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
 .card:hover img{transform:scale(1.04)}
-.badge{position:absolute;top:12px;inset-inline-start:12px;padding:4px 12px;border-radius:999px;background:var(--cushion);color:var(--cushion-ink);font-weight:600;font-size:.85rem}
-.card .cb{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 18px}
-.card h3{font-size:1.3rem}
+.badge{position:absolute;top:8px;inset-inline-start:8px;padding:2px 10px;border-radius:999px;background:var(--cushion);color:var(--cushion-ink);font-weight:600;font-size:.85rem}
+.card .cb{display:flex;flex-direction:column;align-items:flex-start;gap:4px;padding:12px 12px 14px}
+.card h3{font-size:1.02rem;line-height:1.25}
+.card .price{font-size:1rem;color:var(--teal)}
 .price{font-family:var(--display);font-weight:600;font-size:1.2rem;white-space:nowrap;direction:ltr;unicode-bidi:isolate}
 .was{color:var(--muted);font-size:.9rem;white-space:nowrap}
 .was s{direction:ltr;unicode-bidi:isolate;display:inline-block}
-
-/* ---------- מעצב ספה ---------- */
-.design{background:var(--paper);border-radius:28px}
-.cfg{display:grid;gap:22px;margin-top:24px}
-.stage{border-radius:22px;background-color:var(--fog);background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:22px 22px;background-position:center;padding:18px;display:grid;place-items:center}
-.stage svg{width:100%;height:220px}
-#plan .fr{fill:var(--frame);transition:fill .45s ease}
-#plan .st{fill:var(--fab);stroke:var(--frame);stroke-width:1.5;transition:fill .45s ease,stroke .45s ease}
-#plan .pw{fill:var(--cushion)}
-#plan .shadow{fill:rgba(18,57,63,.14);filter:blur(6px)}
-.js-motion #plan .st{transform-box:fill-box;transform-origin:center;animation:pop .5s var(--bounce) both;animation-delay:calc(var(--i)*40ms)}
-.js-motion #plan .pw{transform-box:fill-box;transform-origin:50% 100%;animation:drop .8s var(--bounce) both;animation-delay:calc(180ms + var(--i)*80ms)}
-@keyframes pop{from{transform:scale(.55);opacity:0}to{transform:none;opacity:1}}
-.ctl{border:0;margin:0;padding:0;min-width:0}
-.ctl legend{font-weight:600;margin-bottom:10px;padding:0}
-.ctl+.ctl{margin-top:22px}
-.opt,.sw{position:relative}
-.opt input,.sw input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
-.shapes{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.shapes label{display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 6px 12px;border-radius:14px;border:2px solid var(--line);font-weight:600;font-size:.95rem;cursor:pointer;transition:border-color .2s,background .2s}
-.shapes svg{width:44px;height:30px;color:var(--teal)}
-.shapes input:checked+label{border-color:var(--teal);background:var(--teal-soft)}
-.shapes input:focus-visible+label,.sw input:focus-visible+label{outline:3px solid var(--teal);outline-offset:3px}
-.swatches{display:flex;flex-wrap:wrap;gap:12px}
-.sw label{display:block;width:46px;height:46px;border-radius:50%;background:var(--c);box-shadow:inset 0 0 0 1px rgba(0,0,0,.12);cursor:pointer;transition:transform .25s var(--bounce)}
-.sw input:checked+label{transform:scale(1.06);box-shadow:inset 0 0 0 1px rgba(0,0,0,.12),0 0 0 3px var(--paper),0 0 0 5px var(--teal)}
-.sw-name{margin-top:10px;color:var(--muted);font-size:.95rem}
-.cfg .btn{margin-top:26px}
 
 /* ---------- אולם תצוגה ---------- */
 .visit{background:var(--deep);color:#fff;margin-top:64px;border-radius:28px 28px 0 0}
@@ -191,7 +170,7 @@ dialog.sheet.closing{animation:sheetDown .25s ease-in forwards}
 .sheet-x{position:absolute;z-index:3;top:12px;inset-inline-end:12px;width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,.95);display:grid;place-items:center;box-shadow:0 2px 10px rgba(0,0,0,.15)}
 .sheet-x svg{width:20px;height:20px}
 .sheet-media{margin:0;background:var(--fog);touch-action:pan-x}
-.sheet-media img{width:100%;aspect-ratio:1.6;object-fit:cover}
+.sheet-media img{width:100%;height:auto;max-height:56vh;object-fit:cover}
 .sheet-body{padding:22px 20px 26px;display:flex;flex-direction:column;gap:10px}
 .sheet-body h3{font-size:1.8rem}
 .sheet-body .d{color:var(--muted)}
@@ -203,7 +182,10 @@ dialog.sheet.closing{animation:sheetDown .25s ease-in forwards}
 
 /* ---------- טאבלט ומחשב ---------- */
 @media (min-width:640px){
-  .grid{grid-template-columns:1fr 1fr}
+  .grid{grid-template-columns:repeat(3,1fr);gap:18px}
+  .card h3{font-size:1.2rem}
+  .card .cb{padding:16px 18px 18px}
+  .chips{margin-inline:0;padding-inline:0}
   .actions{grid-template-columns:auto auto;justify-content:start}
   .sheet-act{grid-template-columns:1.4fr 1fr}
 }
@@ -218,9 +200,6 @@ dialog.sheet.closing{animation:sheetDown .25s ease-in forwards}
   .hero-copy{padding:0}
   .perks{justify-content:start;grid-template-columns:repeat(3,max-content);gap:36px;text-align:start}
   .perks li{flex-direction:row}
-  .grid{grid-template-columns:repeat(3,1fr)}
-  .cfg{grid-template-columns:1.2fr 1fr;gap:48px;align-items:center}
-  .stage svg{height:380px}
   .visit-grid{grid-template-columns:1fr auto;gap:80px}
   .vframe{width:300px}
   dialog.sheet{margin:auto;max-width:560px;width:calc(100% - 64px);border-radius:26px;max-height:90vh}
@@ -231,7 +210,6 @@ dialog.sheet.closing{animation:sheetDown .25s ease-in forwards}
 }
 @media (min-width:1200px){
   .grid{grid-template-columns:repeat(4,1fr)}
-  .card h3{font-size:1.15rem}
 }
 @media (max-width:959px){
   .hero>.wrap{padding-inline:0}
@@ -275,7 +253,6 @@ dialog.sheet.closing{animation:sheetDown .25s ease-in forwards}
     </a>
     <nav class="nav" aria-label="ניווט">
       <a href="#models" data-t="nav.models">הדגמים</a>
-      <a href="#design" data-t="nav.design">עיצוב ספה</a>
       <a href="#visit" data-t="nav.visit">אולם תצוגה</a>
     </nav>
     <div class="sofa-toggle" role="group" aria-label="שפה / اللغة">
@@ -306,33 +283,10 @@ dialog.sheet.closing{animation:sheetDown .25s ease-in forwards}
     <div class="wrap">
       <div class="sec-head rv">
         <h2 id="models-h" data-t="models.h">הדגמים שלנו</h2>
-        <p data-t="models.p">הקישו על דגם כדי לשאול עליו.</p>
+        <p data-t="models.p">בחרו סוג, והקישו על דגם כדי לשאול עליו.</p>
       </div>
+      <div class="chips" id="chips" role="group" data-t-aria="filter" aria-label="סינון לפי סוג"></div>
       <ul class="grid" id="grid"></ul>
-    </div>
-  </section>
-
-  <section class="sec design" id="design" aria-labelledby="des-h">
-    <div class="wrap">
-      <div class="sec-head rv">
-        <h2 id="des-h" data-t="des.h">עצבו ספה משלכם</h2>
-        <p data-t="des.p">בחרו צורה וצבע ושלחו לנו. נחזור אליכם עם מחיר.</p>
-      </div>
-      <div class="cfg">
-        <div class="stage rv"><svg id="plan" role="img" aria-label=""></svg></div>
-        <div class="rv">
-          <fieldset class="ctl">
-            <legend data-t="des.shape">צורה</legend>
-            <div class="shapes" id="shapes"></div>
-          </fieldset>
-          <fieldset class="ctl">
-            <legend data-t="des.color">צבע</legend>
-            <div class="swatches" id="fabSw"></div>
-            <p class="sw-name" id="fabName"></p>
-          </fieldset>
-          <a class="btn btn-primary btn-block" id="cfgSend" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg><span data-t="des.send">שלחו לנו בוואטסאפ</span></a>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -403,16 +357,13 @@ const WAZE_URL = 'https://waze.com/ul?q=' + encodeURIComponent('רהיטי עא�
 const T = {
   he: {
     'doc.title':'רהיטי עאלמיה | ספות ופינות ישיבה בייצור מקומי',
-    'nav.models':'הדגמים','nav.design':'עיצוב ספה','nav.visit':'אולם תצוגה',
+    'nav.models':'הדגמים','nav.visit':'אולם תצוגה',
     'hero.title':'הבית יפה יותר<br>עם <em>עאלמיה</em>',
     'hero.sub':'ספות ופינות ישיבה בייצור מקומי, בכל מידה ובכל צבע.',
     'hero.cta':'לדגמים שלנו',
     'perk1':'ייצור מקומי','perk2':'אחריות לשנים','perk3':'משלוח עד הבית',
-    'models.h':'הדגמים שלנו','models.p':'הקישו על דגם כדי לשאול עליו.',
-    'deal':'מבצע','price.was':'במקום',
-    'des.h':'עצבו ספה משלכם','des.p':'בחרו צורה וצבע ושלחו לנו. נחזור אליכם עם מחיר.',
-    'des.shape':'צורה','des.color':'צבע','des.send':'שלחו לנו בוואטסאפ',
-    'shape.I':'ישרה','shape.L':'פינתית','shape.U':'פינת U',
+    'models.h':'הדגמים שלנו','models.p':'בחרו סוג, והקישו על דגם כדי לשאול עליו.',
+    'cat.all':'הכל','cat.corner':'פינות','cat.sofa':'ספות','cat.table':'שולחנות','filter':'סינון לפי סוג','deal':'מבצע','price.was':'במקום',
     'vis.h':'בואו לאולם התצוגה','vis.p':'עין איברהים, אום אל-פחם. עשרות דגמים שאפשר לשבת עליהם לפני שמחליטים.',
     'vis.waze':'נווטו ב-Waze','vis.video':'סרטון מאולם התצוגה',
     'foot.rights':'© 2026 רהיטי עאלמיה','foot.credit':'עיצוב ובניית אתר: Nexora',
@@ -420,21 +371,16 @@ const T = {
     'sheet.wa':'שאלו בוואטסאפ','sheet.call':'התקשרו','sheet.close':'סגירה',
     'wa.general':'שלום, הגעתי מהאתר ואשמח לפרטים על הרהיטים.',
     'wa.product':n=>`שלום, אני מתעניין/ת בדגם "${n}". אפשר לקבל פרטים?`,
-    'wa.cfg':(s,c)=>`שלום, עיצבתי ספה באתר: ${s}, בצבע ${c}. אשמח להצעת מחיר.`,
-    'plan.aria':(s,c)=>`שרטוט ספה ${s} בצבע ${c}`
   },
   ar: {
     'doc.title':'العالمية للأثاث | كنبايات وزوايا صناعة محلية',
-    'nav.models':'الموديلات','nav.design':'صمّم كنبتك','nav.visit':'المعرض',
+    'nav.models':'الموديلات','nav.visit':'المعرض',
     'hero.title':'مع <em>العالمية</em><br>بيتك أحلى',
     'hero.sub':'كنبايات وزوايا صناعة محلية، بأي مقاس وأي لون.',
     'hero.cta':'شوف الموديلات',
     'perk1':'صناعة محلية','perk2':'ضمان لسنوات','perk3':'توصيل للبيت',
-    'models.h':'موديلاتنا','models.p':'اضغط على الموديل لتسأل عنه.',
-    'deal':'عرض','price.was':'بدل',
-    'des.h':'صمّم كنبتك','des.p':'اختر الشكل واللون وأرسله لنا، ونرد عليك بالسعر.',
-    'des.shape':'الشكل','des.color':'اللون','des.send':'أرسل لنا عبر واتساب',
-    'shape.I':'مستقيمة','shape.L':'زاوية','shape.U':'زاوية U',
+    'models.h':'موديلاتنا','models.p':'اختر النوع، واضغط على الموديل لتسأل عنه.',
+    'cat.all':'الكل','cat.corner':'زوايا','cat.sofa':'كنبايات','cat.table':'طاولات','filter':'تصفية حسب النوع','deal':'عرض','price.was':'بدل',
     'vis.h':'زورونا في المعرض','vis.p':'عين إبراهيم، أم الفحم. عشرات الموديلات تقدر تجرّبها قبل ما تقرّر.',
     'vis.waze':'وصّلني بـ Waze','vis.video':'فيديو من المعرض',
     'foot.rights':'© 2026 العالمية للأثاث','foot.credit':'تصميم وبناء الموقع: Nexora',
@@ -442,46 +388,48 @@ const T = {
     'sheet.wa':'اسأل عبر واتساب','sheet.call':'اتصل','sheet.close':'إغلاق',
     'wa.general':'مرحبا، وصلت من الموقع وبدي تفاصيل عن الأثاث.',
     'wa.product':n=>`مرحبا، أنا مهتم/ة بموديل "${n}". ممكن تفاصيل؟`,
-    'wa.cfg':(s,c)=>`مرحبا، صمّمت كنبة في الموقع: ${s}، باللون ${c}. بدي عرض سعر.`,
-    'plan.aria':(s,c)=>`رسم كنبة ${s} باللون ${c}`
   }
 };
 
+const CATS = ['all','corner','sofa','table'];
 const PRODUCTS = [
-  {id:'family-u', img:'img/family-u.jpg',
+  {id:'family-u', cat:'corner', img:'img/family-u.jpg',
     he:['פינת U משפחתית','עור בגוון קוניאק עם בד בהיר, מקום לכל המשפחה.'],
     ar:['زاوية U عائلية','جلد بلون الكونياك مع قماش فاتح، مكان لكل العائلة.']},
-  {id:'summer', img:'img/summer.jpg', price:4990,
+  {id:'summer', cat:'corner', img:'img/summer.jpg', price:4990,
     he:['פינה מודולרית – קיץ 2026','בוקלה בגוון חול עם שזלונג עמוק.'],
     ar:['زاوية معيارية – صيف 2026','بوكليه بلون الرمل مع شيزلونج عميق.']},
-  {id:'u-channel', img:'img/u-channel.jpg',
+  {id:'u-channel', cat:'corner', img:'img/u-channel.jpg',
     he:['פינה בתפרים אנכיים','ריפוד רך וידיות מצופות עץ אגוז.'],
     ar:['زاوية بخياطة عمودية','تنجيد ناعم ومساند من خشب الجوز.']},
-  {id:'cloud', img:'img/cloud.jpg',
+  {id:'cloud', cat:'sofa', img:'img/cloud.jpg',
     he:['ספת ענן','בוקלה לבן, רכה במיוחד.'],
     ar:['كنبة الغيمة','بوكليه أبيض، طرية جداً.']},
-  {id:'modular', img:'img/modular.jpg',
+  {id:'modular', cat:'sofa', img:'img/modular.jpg',
     he:['סלון בוקלה מודולרי','חלקים נפרדים שמסדרים לפי החדר.'],
     ar:['صالون بوكليه معياري','قطع منفصلة ترتّبها حسب الغرفة.']},
-  {id:'gray-corner', img:'img/gray-corner.jpg',
+  {id:'gray-corner', cat:'corner', img:'img/gray-corner.jpg',
     he:['פינה אפורה עם שזלונג','בד עמיד לשימוש יומיומי.'],
     ar:['زاوية رمادية مع شيزلونج','قماش متين للاستعمال اليومي.']},
-  {id:'cognac', img:'img/cognac.jpg',
+  {id:'cognac', cat:'corner', img:'img/cognac.jpg',
     he:['פינה בז׳ עם עור קוניאק','בד בז׳ עם עיטורי עור.'],
     ar:['زاوية بيج مع جلد كونياك','قماش بيج مع تفاصيل جلد.']},
-  {id:'dining', img:'img/dining.jpg',
+  {id:'dining', cat:'table', img:'img/dining.jpg',
     he:['פינת אוכל עגולה','שולחן שיש ושישה כיסאות.'],
-    ar:['طاولة سفرة دائرية','طاولة رخام وستة كراسٍ.']}
+    ar:['طاولة سفرة دائرية','طاولة رخام وستة كراسٍ.']},
+  {id:'armchair', cat:'sofa', img:'img/armchair.jpg',
+    he:['כורסה מעוצבת','בד בוקלה אפור על מסגרת מתכת.'],
+    ar:['فوتيه مودرن','قماش بوكليه رمادي على هيكل معدني.']},
+  {id:'gray-sofa', cat:'sofa', img:'img/gray-sofa.jpg',
+    he:['ספה אפורה מהאולם','בוקלה אפור רך עם כריות נוי.'],
+    ar:['كنبة رمادية من المعرض','بوكليه رمادي ناعم مع مخدات زينة.']},
+  {id:'dining-chairs', cat:'table', img:'img/dining-chairs.jpg',
+    he:['כיסאות אוכל מרופדים','ריפוד שמנת ומסגרת עץ כהה.'],
+    ar:['كراسي سفرة منجّدة','تنجيد كريمي وهيكل خشب داكن.']},
+  {id:'coffee-table', cat:'table', img:'img/coffee-table.jpg',
+    he:['שולחן סלון מעץ מלא','עץ טבעי בגוונים חמים.'],
+    ar:['طاولة صالون خشب','خشب طبيعي بألوان دافئة.']}
 ];
-const FABRICS = [
-  {id:'cream', c:'#E9E2D4', he:'שמנת', ar:'كريمي'},
-  {id:'sand', c:'#C9B08F', he:'חול', ar:'رملي'},
-  {id:'charcoal', c:'#4B5157', he:'אפור פחם', ar:'رمادي فحمي'},
-  {id:'petrol', c:'#2E5E6B', he:'כחול פטרול', ar:'أزرق بترولي'},
-  {id:'olive', c:'#6F7556', he:'ירוק זית', ar:'زيتي'},
-  {id:'terra', c:'#B0643F', he:'טרקוטה', ar:'تيراكوتا'}
-];
-
 const $ = (s, r=document) => r.querySelector(s);
 const $$ = (s, r=document) => [...r.querySelectorAll(s)];
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -497,13 +445,33 @@ const byId = id => PRODUCTS.find(p => p.id === id);
 /* ---------- דגמים ---------- */
 function renderGrid() {
   $('#grid').innerHTML = PRODUCTS.map(p => `
-    <li class="rv in">
+    <li data-cat="${p.cat}">
       <button type="button" class="card" data-id="${p.id}">
-        <figure><img src="${p.img}" alt="" loading="lazy" width="1000" height="625">${p.price ? `<span class="badge">${t('deal')}</span>` : ''}</figure>
+        <figure><img src="${p.img}" alt="" loading="lazy">${p.price ? `<span class="badge">${t('deal')}</span>` : ''}</figure>
         <span class="cb"><h3>${p[lang][0]}</h3>${p.price ? `<span class="price">${fmt(p.price)}</span>` : ''}</span>
       </button>
     </li>`).join('');
+  filter(false);
 }
+let cat = 'all';
+function renderChips() {
+  $('#chips').innerHTML = CATS.map(c => `<button type="button" class="chip" data-cat="${c}" aria-pressed="${c === cat}">${t('cat.' + c)}</button>`).join('');
+}
+function filter(animate) {
+  let i = 0;
+  $$('#grid li').forEach(li => {
+    const on = cat === 'all' || li.dataset.cat === cat;
+    li.hidden = !on;
+    li.classList.remove('show');
+    if (on && animate && !reduce) { li.style.setProperty('--i', i++); void li.offsetWidth; li.classList.add('show'); }
+  });
+}
+$('#chips').addEventListener('click', e => {
+  const b = e.target.closest('.chip'); if (!b) return;
+  cat = b.dataset.cat;
+  $$('.chip').forEach(c => c.setAttribute('aria-pressed', c === b));
+  filter(true);
+});
 
 /* ---------- חלונית דגם ---------- */
 const sheet = $('#sheet');
@@ -549,66 +517,6 @@ $('#grid').addEventListener('click', e => { const b = e.target.closest('.card');
   });
 })();
 
-/* ---------- מעצב ספה ---------- */
-const cfg = {shape:'L', fab:'cream'};
-const SHAPE_ICONS = {
-  I:'<svg viewBox="0 0 44 30"><rect x="3" y="8" width="38" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>',
-  L:'<svg viewBox="0 0 44 30"><path d="M3 5h38v12H15v10H3z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg>',
-  U:'<svg viewBox="0 0 44 30"><path d="M3 5h38v22H31V15H13v12H3z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg>'
-};
-function renderControls() {
-  $('#shapes').innerHTML = ['I','L','U'].map(s => `<span class="opt"><input type="radio" name="shape" id="sh-${s}" value="${s}" ${cfg.shape === s ? 'checked' : ''}><label for="sh-${s}">${SHAPE_ICONS[s]}${t('shape.' + s)}</label></span>`).join('');
-  $('#fabSw').innerHTML = FABRICS.map(f => `<span class="sw"><input type="radio" name="fab" id="fab-${f.id}" value="${f.id}" ${f.id === cfg.fab ? 'checked' : ''}><label for="fab-${f.id}" style="--c:${f.c}"><span class="sr">${f[lang]}</span></label></span>`).join('');
-}
-function geometry() {
-  const s = 65, d = 95, b = 20, a = 20, m = 2, n = 3, F = [], S = [], P = [];
-  let W, H;
-  const fr = (x,y,w,h) => F.push([x,y,w,h]);
-  const st = (x,y,w,h) => S.push([x+2.5,y+2.5,w-5,h-5]);
-  if (cfg.shape === 'I') {
-    W = 2*a + n*s; H = d;
-    fr(0,0,W,b); fr(0,0,a,d); fr(W-a,0,a,d);
-    for (let i=0;i<n;i++) st(a+i*s,b,s,d-b);
-    P.push([a+10,b+8,-8],[W-a-44,b+8,8]);
-  } else if (cfg.shape === 'L') {
-    W = d + n*s + a; H = d + m*s + a;
-    fr(0,0,d+n*s,b); fr(0,0,b,d+m*s); fr(d+n*s,0,a,d); fr(0,d+m*s,d,a);
-    st(b,b,d-b,d-b);
-    for (let i=0;i<n;i++) st(d+i*s,b,s,d-b);
-    for (let j=0;j<m;j++) st(b,d+j*s,d-b,s);
-    P.push([b+10,b+10,-10],[d+n*s-44,b+8,8]);
-  } else {
-    W = 2*d + n*s; H = d + m*s + a;
-    fr(0,0,W,b); fr(0,0,b,d+m*s); fr(W-b,0,b,d+m*s); fr(0,d+m*s,d,a); fr(W-d,d+m*s,d,a);
-    st(b,b,d-b,d-b); st(W-d,b,d-b,d-b);
-    for (let i=0;i<n;i++) st(d+i*s,b,s,d-b);
-    for (let j=0;j<m;j++) { st(b,d+j*s,d-b,s); st(W-d,d+j*s,d-b,s); }
-    P.push([b+10,b+10,-10],[W-b-44,b+10,10]);
-  }
-  return {W, H, F, S, P};
-}
-function drawPlan() {
-  const g = geometry(), svg = $('#plan'), pad = 16;
-  svg.setAttribute('viewBox', `${-pad} ${-pad} ${g.W + 2*pad} ${g.H + 2*pad}`);
-  const r = (a, cls, i) => `<rect class="${cls}" x="${a[0]}" y="${a[1]}" width="${a[2]}" height="${a[3]}" rx="${cls==='fr'?8:11}" style="--i:${i}"/>`;
-  svg.innerHTML =
-    g.F.map(a => `<rect class="shadow" x="${a[0]+6}" y="${a[1]+9}" width="${a[2]}" height="${a[3]}" rx="10"/>`).join('') +
-    g.F.map((a,i) => r(a,'fr',i)).join('') +
-    g.S.map((a,i) => r(a,'st',i)).join('') +
-    g.P.map((p,i) => `<g transform="translate(${p[0]+17} ${p[1]+17}) rotate(${p[2]})"><rect class="pw" x="-17" y="-17" width="34" height="34" rx="7" style="--i:${i}"/></g>`).join('');
-  recolor();
-}
-function recolor() {
-  const fab = FABRICS.find(f => f.id === cfg.fab), svg = $('#plan'), shape = t('shape.' + cfg.shape);
-  svg.style.setProperty('--fab', fab.c);
-  svg.style.setProperty('--frame', `color-mix(in srgb, ${fab.c} 70%, #1b1b1b)`);
-  svg.setAttribute('aria-label', t('plan.aria')(shape, fab[lang]));
-  $('#fabName').textContent = fab[lang];
-  $('#cfgSend').href = waLink(t('wa.cfg')(shape, fab[lang]));
-}
-$('#shapes').addEventListener('change', e => { cfg.shape = e.target.value; drawPlan(); });
-$('#fabSw').addEventListener('change', e => { cfg.fab = e.target.value; recolor(); });
-
 /* ---------- שפה ---------- */
 function applyLang() {
   document.documentElement.lang = lang;
@@ -618,7 +526,7 @@ function applyLang() {
   $$('.sofa-toggle button').forEach(b => b.setAttribute('aria-pressed', b.dataset.lang === lang));
   $$('.js-wa').forEach(a => a.href = waLink(t('wa.general')));
   $$('.js-waze').forEach(a => a.href = WAZE_URL);
-  renderGrid(); renderControls(); drawPlan();
+  renderChips(); renderGrid();
   if (sheet.open && current) fillSheet();
 }
 $$('.sofa-toggle button').forEach(b => b.addEventListener('click', () => {
