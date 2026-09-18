@@ -4,13 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>רהיטי עאלמיה | العالمية للأثاث</title>
-<meta name="description" content="ספות ופינות ישיבה בייצור מקומי, בכל מידה ובכל צבע. אולם תצוגה בעין איברהים, אום אל-פחם.">
+<meta name="description" content="ספות, פינות ושולחנות בכל מידה ובכל צבע. אולם תצוגה בעין איברהים, אום אל-פחם.">
 <meta name="theme-color" content="#EEF3F2">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 80'%3E%3Crect x='4' y='30' width='14' height='46' rx='4' fill='%232A8391'/%3E%3Crect x='102' y='30' width='14' height='46' rx='4' fill='%232A8391'/%3E%3Crect x='4' y='60' width='112' height='16' rx='4' fill='%232A8391'/%3E%3Crect x='22' y='8' width='36' height='38' rx='4' fill='%23F6A54A'/%3E%3Crect x='62' y='8' width='36' height='38' rx='4' fill='%23F6A54A'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@600;700&family=Fredoka:wght@500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=IBM+Plex+Sans+Hebrew:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="img/hero-1.jpg">
+<link rel="preload" as="image" href="img/summer.jpg">
+<link rel="preload" as="image" href="img/gray-corner.jpg">
 <style>
 :root{
   --teal:#2A8391;          /* מסגרת הספה בלוגו */
@@ -49,39 +50,46 @@ main{transition:opacity .2s ease}
 body.switching main{opacity:0}
 .num{direction:ltr;unicode-bidi:isolate}
 
-/* ---------- לוגו ---------- */
-.mark{width:44px;height:auto;overflow:visible;--mf:var(--teal)}
-.mark .cush{fill:var(--cushion);transform-box:fill-box;transform-origin:50% 100%}
-.js-motion .top .mark .cush{animation:drop .9s var(--bounce) both}
-.js-motion .top .mark .cush.c2{animation-delay:.14s}
 @keyframes drop{
   0%{transform:translateY(-70%);opacity:0}
   55%{transform:translateY(0) scaleY(.78) scaleX(1.08);opacity:1}
   75%{transform:scaleY(1.06) scaleX(.97)}
   100%{transform:none;opacity:1}
 }
+@keyframes squish{30%{transform:scaleY(.8) scaleX(1.08)}65%{transform:scaleY(1.05) scaleX(.97)}}
+
+/* ---------- לוגו ---------- */
+.mark{width:42px;height:auto;overflow:visible;--mf:var(--teal)}
+.mark .cush{fill:var(--cushion)}
 
 /* ---------- כותרת ---------- */
 .top{position:sticky;top:0;z-index:40;background:rgba(238,243,242,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:box-shadow .3s}
 .top.scrolled{box-shadow:0 1px 0 var(--line)}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;height:64px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px;height:64px}
+.brand{display:flex;align-items:center;gap:8px;text-decoration:none;min-width:0}
 .brand-t{display:flex;flex-direction:column;line-height:1.1;white-space:nowrap}
-.brand-t b{font-family:"Baloo Bhaijaan 2",sans-serif;font-weight:700;color:var(--teal);font-size:1.1rem}
-.brand-t span{font-family:"Fredoka",sans-serif;font-weight:600;color:#454442;font-size:.9rem}
+.brand-t b{font-family:"Baloo Bhaijaan 2",sans-serif;font-weight:700;color:var(--teal);font-size:1.05rem}
+.brand-t span{font-family:"Fredoka",sans-serif;font-weight:600;color:#454442;font-size:.86rem}
 .nav{display:none;gap:4px}
 .nav a{padding:8px 14px;border-radius:10px;text-decoration:none;font-weight:500}
 .nav a:hover{background:var(--teal-soft)}
+.top-end{display:flex;align-items:center;gap:8px}
 
 /* מתג שפה: ספה עם שתי כריות */
-.sofa-toggle{position:relative;display:flex;gap:4px;padding:0 8px 7px}
+.sofa-toggle{position:relative;display:flex;gap:4px;padding:0 7px 7px}
 .sofa-toggle::before{content:"";position:absolute;inset:auto 0 0 0;height:62%;border:5px solid var(--teal);border-top:0;border-radius:0 0 9px 9px;pointer-events:none}
-.sofa-toggle button{position:relative;z-index:1;min-width:54px;height:36px;padding:0 8px;border-radius:8px;border:2px solid var(--teal);background:var(--paper);color:var(--teal);font-weight:600;font-size:.88rem;transition:background .25s,color .25s;transform-origin:50% 100%}
+.sofa-toggle button{position:relative;z-index:1;min-width:48px;height:36px;padding:0 7px;border-radius:8px;border:2px solid var(--teal);background:var(--paper);color:var(--teal);font-weight:600;font-size:.84rem;transition:background .25s,color .25s;transform-origin:50% 100%}
 .sofa-toggle button[lang="ar"]{font-family:"IBM Plex Sans Arabic",sans-serif}
 .sofa-toggle button[lang="he"]{font-family:"IBM Plex Sans Hebrew",sans-serif}
 .sofa-toggle button[aria-pressed="true"]{background:var(--cushion);border-color:var(--cushion);color:var(--cushion-ink)}
 .sofa-toggle button.squish{animation:squish .5s var(--bounce)}
-@keyframes squish{30%{transform:scaleY(.72) scaleX(1.12)}65%{transform:scaleY(1.08) scaleX(.96)}}
+
+/* כפתור סל */
+.cart-btn{position:relative;width:44px;height:44px;border-radius:13px;border:2px solid var(--line);background:var(--paper);display:grid;place-items:center;color:var(--deep);transform-origin:50% 100%}
+.cart-btn svg{width:24px;height:24px}
+.cart-btn .count{position:absolute;top:-7px;inset-inline-end:-7px;min-width:22px;height:22px;padding:0 5px;border-radius:11px;background:var(--cushion);color:var(--cushion-ink);font-size:.78rem;font-weight:700;display:grid;place-items:center;line-height:1;transition:transform .3s var(--bounce)}
+.cart-btn .count[hidden]{display:none}
+.cart-btn.bump{animation:squish .5s var(--bounce)}
 
 /* ---------- כפתורים ---------- */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 26px;border-radius:16px;font-weight:600;font-size:1.02rem;text-decoration:none;border:2px solid transparent;transition:transform .15s,box-shadow .2s,background .2s;white-space:nowrap}
@@ -91,20 +99,44 @@ body.switching main{opacity:0}
 .btn-ghost{border-color:var(--teal);color:var(--teal);background:transparent}
 .btn-light{border-color:rgba(255,255,255,.5);color:#fff}
 
-/* ---------- פתיח ---------- */
-.hero-img{height:44vh;height:44svh;min-height:280px;max-height:520px;overflow:hidden;border-radius:0 0 28px 28px}
-.hero-img img{width:100%;height:100%;object-fit:cover;object-position:48% 50%}
-.js-motion .hero-img img{animation:settle 2.4s var(--ease) both}
-@keyframes settle{from{transform:scale(1.08)}to{transform:none}}
-.hero-copy{padding-block:28px 8px}
-.hero h1{font-size:clamp(2.5rem,11.5vw,4.8rem);line-height:1}
+/* ---------- פתיח: הלוגו כספה ענקית ---------- */
+.hero .wrap{display:grid;grid-template-areas:"title" "sofa" "rest";padding-block:26px 8px}
+.hero h1{grid-area:title;font-size:clamp(2.3rem,10.5vw,4.6rem);line-height:1}
 .hero h1 em{font-style:normal;color:var(--teal)}
-.hero-sub{margin-top:14px;font-size:1.08rem;color:var(--muted)}
-.hero .btn{margin-top:24px}
+.hero-rest{grid-area:rest}
+.hero-sub{margin-top:18px;font-size:1.05rem;color:var(--muted)}
+.hero .btn{margin-top:20px}
 
-.perks{list-style:none;margin:36px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;text-align:center}
-.perks li{display:flex;flex-direction:column;align-items:center;gap:8px;font-weight:600;font-size:.9rem;line-height:1.25}
-.perks svg{width:46px;height:46px;padding:11px;border-radius:14px;background:var(--paper);color:var(--teal)}
+.lsofa{grid-area:sofa;position:relative;width:100%;max-width:520px;margin:22px auto 0;aspect-ratio:120/100}
+.lsofa .p{position:absolute;background:var(--teal);border-radius:12px}
+.lsofa .arm{top:40%;height:56%;width:10.8%}
+.lsofa .a1{left:1.7%}
+.lsofa .a2{right:1.7%}
+.lsofa .base{left:1.7%;right:1.7%;top:78%;height:18%}
+.lsofa .seat{top:70%;height:6%;width:35%;border-radius:6px}
+.lsofa .s1{left:14.2%}
+.lsofa .s2{right:14.2%}
+.lsofa::after{content:"";position:absolute;left:6%;right:6%;bottom:-5%;height:7%;border-radius:50%;background:rgba(18,57,63,.22);filter:blur(10px);z-index:-1}
+.cushion{position:absolute;top:3%;height:63%;width:35%;padding:6px;border:0;border-radius:16px;background:var(--cushion);box-shadow:0 10px 24px rgba(160,90,20,.28);transform-origin:50% 100%;transition:transform .25s var(--ease)}
+.cushion.c1{left:14.2%}
+.cushion.c2{right:14.2%}
+.cushion .win{display:block;width:100%;height:100%;border-radius:11px;overflow:hidden;background:#e8dccb}
+.cushion img{width:100%;height:100%;object-fit:cover;transform:translate(calc(var(--px,0)*-8px),calc(var(--py,0)*-6px)) scale(1.12);transition:transform .4s var(--ease),opacity .25s}
+.cushion:hover{transform:translateY(-4px)}
+.cushion:active{transform:scaleY(.9) scaleX(1.04)}
+.cushion.swap{animation:squish .7s var(--bounce)}
+.cushion.swap img{opacity:.2}
+.lsofa-hint{position:absolute;inset-inline:0;bottom:-15%;text-align:center;font-size:.88rem;color:var(--muted);font-weight:500}
+.js-motion .lsofa .p{animation:grow .7s var(--ease) backwards;transform-origin:50% 100%}
+.js-motion .lsofa .base{animation-name:growx;transform-origin:50% 50%}
+.js-motion .lsofa .seat{animation-delay:.25s}
+.js-motion .lsofa .cushion{animation:drop 1s var(--bounce) backwards;animation-delay:.45s}
+.js-motion .lsofa .cushion.c2{animation-delay:.62s}
+.js-motion .lsofa .cushion.swap{animation:squish .7s var(--bounce);animation-delay:0s}
+.js-motion .lsofa-hint{animation:fadeup .6s ease 1.4s backwards}
+@keyframes grow{from{transform:scaleY(0)}}
+@keyframes growx{from{transform:scaleX(0)}}
+@keyframes fadeup{from{opacity:0;transform:translateY(6px)}}
 
 /* ---------- סקשנים ---------- */
 .sec{padding-block:64px}
@@ -120,21 +152,24 @@ body.switching main{opacity:0}
 .grid li[hidden]{display:none}
 .grid li.show{animation:cardIn .45s var(--ease) both;animation-delay:calc(var(--i,0)*50ms)}
 @keyframes cardIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-.card{display:flex;flex-direction:column;width:100%;height:100%;border:0;padding:0;background:var(--paper);border-radius:18px;overflow:hidden;text-align:start;transition:box-shadow .3s,transform .3s var(--ease)}
+.card{position:relative;height:100%;background:var(--paper);border-radius:18px;overflow:hidden;transition:box-shadow .3s,transform .3s var(--ease)}
 .card:hover{box-shadow:0 14px 34px rgba(18,57,63,.12);transform:translateY(-3px)}
-.card figure{position:relative;margin:0;aspect-ratio:4/3;overflow:hidden;background:#e3e9e8}
+.card-open{display:flex;flex-direction:column;width:100%;height:100%;border:0;padding:0;background:none;text-align:start}
+.card figure{position:relative;margin:0;width:100%;aspect-ratio:4/3;overflow:hidden;background:#e3e9e8}
 .card img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
 .card:hover img{transform:scale(1.04)}
-.badge{position:absolute;top:8px;inset-inline-start:8px;padding:2px 10px;border-radius:999px;background:var(--cushion);color:var(--cushion-ink);font-weight:600;font-size:.85rem}
+.badge{position:absolute;bottom:8px;inset-inline-start:8px;padding:2px 10px;border-radius:999px;background:var(--cushion);color:var(--cushion-ink);font-weight:600;font-size:.85rem}
 .card .cb{display:flex;flex-direction:column;align-items:flex-start;gap:4px;padding:12px 12px 14px}
 .card h3{font-size:1.02rem;line-height:1.25}
-.card .price{font-size:1rem;color:var(--teal)}
 .price{font-family:var(--display);font-weight:600;font-size:1.2rem;white-space:nowrap;direction:ltr;unicode-bidi:isolate}
-.was{color:var(--muted);font-size:.9rem;white-space:nowrap}
-.was s{direction:ltr;unicode-bidi:isolate;display:inline-block}
+.card .price{font-size:1rem;color:var(--teal)}
+.add{position:absolute;top:8px;inset-inline-end:8px;width:40px;height:40px;border-radius:50%;border:0;background:var(--paper);color:var(--deep);display:grid;place-items:center;box-shadow:0 3px 10px rgba(0,0,0,.18);transition:background .2s,color .2s}
+.add svg{width:22px;height:22px}
+.add:hover{background:var(--cushion);color:var(--cushion-ink)}
+.add.done{background:var(--teal);color:#fff;animation:squish .5s var(--bounce)}
 
 /* ---------- אולם תצוגה ---------- */
-.visit{background:var(--deep);color:#fff;margin-top:64px;border-radius:28px 28px 0 0}
+.visit{background:var(--deep);color:#fff;margin-top:24px;border-radius:28px 28px 0 0}
 .visit .sec-head p{color:rgba(255,255,255,.75)}
 .visit-grid{display:grid;gap:32px;align-items:center}
 .actions{display:grid;gap:10px;margin-top:24px}
@@ -159,7 +194,7 @@ footer .brand-t span{color:#fff}
 .dock a svg{width:23px;height:23px}
 .dock a.main{background:var(--cushion);color:var(--cushion-ink)}
 
-/* ---------- חלונית דגם ---------- */
+/* ---------- חלוניות (דגם / סל) ---------- */
 dialog.sheet{padding:0;border:0;margin:auto auto 0;width:100%;max-width:100%;max-height:90vh;max-height:90svh;border-radius:26px 26px 0 0;background:var(--paper);color:var(--ink);overflow:hidden}
 dialog.sheet::backdrop{background:rgba(11,40,45,.55)}
 dialog.sheet[open]{animation:sheetUp .4s var(--ease)}
@@ -176,11 +211,43 @@ dialog.sheet.closing{animation:sheetDown .25s ease-in forwards}
 .sheet-body .d{color:var(--muted)}
 .sheet-act{display:grid;gap:10px;margin-top:10px}
 
+.cart-head{position:sticky;top:0;z-index:2;background:var(--paper);display:flex;align-items:center;justify-content:space-between;padding:18px 20px 12px;border-bottom:1px solid var(--line)}
+.cart-head h3{font-size:1.6rem}
+.cart-head .sheet-x{position:static;box-shadow:none;background:var(--fog)}
+.cart-list{list-style:none;margin:0;padding:6px 20px}
+.cart-list li{display:grid;grid-template-columns:76px 1fr auto;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+.cart-list li:last-child{border-bottom:0}
+.cart-list img{width:76px;height:58px;border-radius:10px;object-fit:cover}
+.cart-list b{display:block;font-weight:600;line-height:1.3}
+.cart-list small{color:var(--muted)}
+.cart-list .price{font-size:.95rem;color:var(--teal)}
+.qty{display:flex;align-items:center;gap:2px;background:var(--fog);border-radius:12px;padding:3px}
+.qty button{width:34px;height:34px;border:0;border-radius:9px;background:var(--paper);display:grid;place-items:center;color:var(--teal)}
+.qty button svg{width:18px;height:18px}
+.qty output{min-width:22px;text-align:center;font-weight:700}
+.cart-foot{padding:10px 20px 24px;display:grid;gap:12px}
+.cart-note{font-size:.9rem;color:var(--muted);background:var(--fog);border-radius:12px;padding:10px 12px}
+.cart-empty{padding:34px 20px 30px;text-align:center;color:var(--muted);display:grid;gap:16px;justify-items:center}
+.cart-empty>svg{width:56px;height:56px;color:var(--line)}
+[hidden]{display:none!important}
+
+/* תמונה שעפה לסל */
+.flyer{position:fixed;z-index:60;border-radius:14px;object-fit:cover;pointer-events:none;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+
 /* ---------- חשיפה בגלילה ---------- */
 .js-motion .rv{opacity:0;transform:translateY(20px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
 .js-motion .rv.in{opacity:1;transform:none}
 
 /* ---------- טאבלט ומחשב ---------- */
+@media (max-width:379px){
+  .brand-t b{font-size:.95rem}
+  .brand-t span{font-size:.78rem}
+  .mark{width:36px}
+  .sofa-toggle button{min-width:44px;padding:0 5px;font-size:.8rem}
+}
+@media (max-width:959px){
+  .lsofa{margin-bottom:58px}
+}
 @media (min-width:640px){
   .grid{grid-template-columns:repeat(3,1fr);gap:18px}
   .card h3{font-size:1.2rem}
@@ -195,11 +262,9 @@ dialog.sheet.closing{animation:sheetDown .25s ease-in forwards}
   .dock{display:none}
   footer{padding-bottom:40px}
   .sec{padding-block:96px}
-  .hero>.wrap{display:grid;grid-template-columns:1fr 1.15fr;gap:56px;align-items:center;min-height:calc(86vh - 64px)}
-  .hero-img{order:1;height:74vh;max-height:680px;border-radius:28px}
-  .hero-copy{padding:0}
-  .perks{justify-content:start;grid-template-columns:repeat(3,max-content);gap:36px;text-align:start}
-  .perks li{flex-direction:row}
+  .hero .wrap{grid-template-columns:1fr 1.1fr;grid-template-areas:"title sofa" "rest sofa";column-gap:56px;align-content:center;min-height:calc(86vh - 64px);padding-block:40px}
+  .hero h1{align-self:end}
+  .lsofa{margin:0;max-width:560px;justify-self:center;align-self:center}
   .visit-grid{grid-template-columns:1fr auto;gap:80px}
   .vframe{width:300px}
   dialog.sheet{margin:auto;max-width:560px;width:calc(100% - 64px);border-radius:26px;max-height:90vh}
@@ -210,10 +275,6 @@ dialog.sheet.closing{animation:sheetDown .25s ease-in forwards}
 }
 @media (min-width:1200px){
   .grid{grid-template-columns:repeat(4,1fr)}
-}
-@media (max-width:959px){
-  .hero>.wrap{padding-inline:0}
-  .hero-copy,.hero .perks{padding-inline:20px}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
@@ -228,9 +289,11 @@ dialog.sheet.closing{animation:sheetDown .25s ease-in forwards}
     <symbol id="i-nav" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 21s-7-6.4-7-11.6a7 7 0 0 1 14 0C19 14.6 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.6" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
     <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="3.8" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17" cy="7" r="1.1" fill="currentColor"/></symbol>
     <symbol id="i-x" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></symbol>
-    <symbol id="i-ruler" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" d="M3 16.5L16.5 3 21 7.5 7.5 21z M7 12.5l2 2 M10 9.5l2 2 M13 6.5l2 2"/></symbol>
-    <symbol id="i-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" d="M12 3l8 3v6c0 4.8-3.4 8-8 9-4.6-1-8-4.2-8-9V6z M8.5 12l2.5 2.5 4.5-5"/></symbol>
-    <symbol id="i-truck" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M2.5 6h11v10h-11z M13.5 9.5h4l3.5 3.5v3h-7.5"/><circle cx="6.5" cy="17.5" r="2" fill="#fff" stroke="currentColor" stroke-width="1.8"/><circle cx="17" cy="17.5" r="2" fill="#fff" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M4.8 8h14.4l-1.1 12.2a1 1 0 0 1-1 .8H6.9a1 1 0 0 1-1-.8z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M8.8 10.5V7a3.2 3.2 0 0 1 6.4 0v3.5"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M5 12h14"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4.5 7h15M9.5 7V4.5h5V7M6.5 7l1 13h9l1-13"/></symbol>
     <symbol id="logo" viewBox="0 0 120 80">
       <rect style="fill:var(--mf)" x="4" y="30" width="14" height="46" rx="4"/>
       <rect style="fill:var(--mf)" x="102" y="30" width="14" height="46" rx="4"/>
@@ -247,7 +310,7 @@ dialog.sheet.closing{animation:sheetDown .25s ease-in forwards}
       <svg class="mark" viewBox="0 0 120 80" aria-hidden="true">
         <use href="#logo"/>
         <rect class="cush" x="22" y="10" width="36" height="37" rx="4"/>
-        <rect class="cush c2" x="62" y="10" width="36" height="37" rx="4"/>
+        <rect class="cush" x="62" y="10" width="36" height="37" rx="4"/>
       </svg>
       <span class="brand-t"><b lang="ar">العالمية للأثاث</b><span lang="he">רהיטי עאלמיה</span></span>
     </a>
@@ -255,9 +318,12 @@ dialog.sheet.closing{animation:sheetDown .25s ease-in forwards}
       <a href="#models" data-t="nav.models">הדגמים</a>
       <a href="#visit" data-t="nav.visit">אולם תצוגה</a>
     </nav>
-    <div class="sofa-toggle" role="group" aria-label="שפה / اللغة">
-      <button type="button" lang="he" data-lang="he" aria-pressed="true">עברית</button>
-      <button type="button" lang="ar" data-lang="ar" aria-pressed="false">عربي</button>
+    <div class="top-end">
+      <div class="sofa-toggle" role="group" aria-label="שפה / اللغة">
+        <button type="button" lang="he" data-lang="he" aria-pressed="true">עברית</button>
+        <button type="button" lang="ar" data-lang="ar" aria-pressed="false">عربي</button>
+      </div>
+      <button type="button" class="cart-btn" id="cartBtn" aria-label="סל"><svg><use href="#i-bag"/></svg><span class="count" id="cartCount" hidden>0</span></button>
     </div>
   </div>
 </header>
@@ -265,16 +331,18 @@ dialog.sheet.closing{animation:sheetDown .25s ease-in forwards}
 <main>
   <section class="hero">
     <div class="wrap">
-      <div class="hero-img"><img src="img/hero-1.jpg" alt="" width="1262" height="1079"></div>
-      <div class="hero-copy">
-        <h1 data-t="hero.title">הבית יפה יותר<br>עם <em>עאלמיה</em></h1>
-        <p class="hero-sub" data-t="hero.sub">ספות ופינות ישיבה בייצור מקומי, בכל מידה ובכל צבע.</p>
+      <h1 data-t="hero.title">הבית יפה יותר<br>עם <em>עאלמיה</em></h1>
+      <div class="lsofa" id="lsofa">
+        <span class="p arm a1"></span><span class="p arm a2"></span>
+        <span class="p base"></span>
+        <span class="p seat s1"></span><span class="p seat s2"></span>
+        <button type="button" class="cushion c1" data-slot="0"><span class="win"><img alt=""></span></button>
+        <button type="button" class="cushion c2" data-slot="1"><span class="win"><img alt=""></span></button>
+        <p class="lsofa-hint" data-t="hero.hint">הקישו על כרית כדי לראות את הדגם</p>
+      </div>
+      <div class="hero-rest">
+        <p class="hero-sub" data-t="hero.sub">ספות, פינות ושולחנות בכל מידה ובכל צבע. בחרו, הוסיפו לסל ושלחו לנו בוואטסאפ.</p>
         <a class="btn btn-primary" href="#models" data-t="hero.cta">לדגמים שלנו</a>
-        <ul class="perks">
-          <li><svg><use href="#i-ruler"/></svg><span data-t="perk1">ייצור מקומי</span></li>
-          <li><svg><use href="#i-shield"/></svg><span data-t="perk2">אחריות לשנים</span></li>
-          <li><svg><use href="#i-truck"/></svg><span data-t="perk3">משלוח עד הבית</span></li>
-        </ul>
       </div>
     </div>
   </section>
@@ -283,7 +351,7 @@ dialog.sheet.closing{animation:sheetDown .25s ease-in forwards}
     <div class="wrap">
       <div class="sec-head rv">
         <h2 id="models-h" data-t="models.h">הדגמים שלנו</h2>
-        <p data-t="models.p">בחרו סוג, והקישו על דגם כדי לשאול עליו.</p>
+        <p data-t="models.p">בחרו סוג, והוסיפו לסל עם ה־+.</p>
       </div>
       <div class="chips" id="chips" role="group" data-t-aria="filter" aria-label="סינון לפי סוג"></div>
       <ul class="grid" id="grid"></ul>
@@ -315,7 +383,7 @@ dialog.sheet.closing{animation:sheetDown .25s ease-in forwards}
   <div class="wrap">
     <div class="foot">
       <a class="brand" href="#">
-        <svg class="mark" viewBox="0 0 120 80" aria-hidden="true"><use href="#logo"/><rect class="cush" x="22" y="10" width="36" height="37" rx="4"/><rect class="cush c2" x="62" y="10" width="36" height="37" rx="4"/></svg>
+        <svg class="mark" viewBox="0 0 120 80" aria-hidden="true"><use href="#logo"/><rect class="cush" x="22" y="10" width="36" height="37" rx="4"/><rect class="cush" x="62" y="10" width="36" height="37" rx="4"/></svg>
         <span class="brand-t"><b lang="ar">العالمية للأثاث</b><span lang="he">רהיטי עאלמיה</span></span>
       </a>
       <div class="foot-links">
@@ -333,21 +401,44 @@ dialog.sheet.closing{animation:sheetDown .25s ease-in forwards}
   <a class="js-waze" href="#" target="_blank" rel="noopener"><svg><use href="#i-nav"/></svg><span data-t="bar.waze">נווטו</span></a>
 </nav>
 
+<!-- חלונית דגם -->
 <dialog class="sheet" id="sheet" aria-labelledby="sheetName">
-  <div class="sheet-in" id="sheetIn">
-    <button type="button" class="sheet-x" id="sheetX" data-t-aria="sheet.close" aria-label="סגירה"><svg><use href="#i-x"/></svg></button>
+  <div class="sheet-in">
+    <button type="button" class="sheet-x js-close" data-t-aria="close" aria-label="סגירה"><svg><use href="#i-x"/></svg></button>
     <figure class="sheet-media" id="sheetMedia"><img id="sheetImg" src="img/cloud.jpg" alt=""></figure>
     <div class="sheet-body">
       <h3 id="sheetName"></h3>
       <p id="sheetPrice"></p>
       <p class="d" id="sheetDesc"></p>
       <div class="sheet-act">
-        <a class="btn btn-primary" id="sheetWa" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg><span data-t="sheet.wa">שאלו בוואטסאפ</span></a>
-        <a class="btn btn-ghost" href="tel:+97246113110"><svg><use href="#i-phone"/></svg><span data-t="sheet.call">התקשרו</span></a>
+        <button type="button" class="btn btn-primary" id="sheetAdd"><svg><use href="#i-bag"/></svg><span data-t="add">הוסיפו לסל</span></button>
+        <a class="btn btn-ghost" id="sheetWa" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg><span data-t="ask">שאלו בוואטסאפ</span></a>
       </div>
     </div>
   </div>
 </dialog>
+
+<!-- חלונית סל -->
+<dialog class="sheet" id="cart" aria-labelledby="cartTitle">
+  <div class="sheet-in">
+    <div class="cart-head">
+      <h3 id="cartTitle" data-t="cart.title">הסל שלי</h3>
+      <button type="button" class="sheet-x js-close" data-t-aria="close" aria-label="סגירה"><svg><use href="#i-x"/></svg></button>
+    </div>
+    <ul class="cart-list" id="cartList"></ul>
+    <div class="cart-empty" id="cartEmpty">
+      <svg><use href="#i-bag"/></svg>
+      <p data-t="cart.empty">הסל ריק עדיין.</p>
+      <a class="btn btn-ghost js-close" href="#models" data-t="cart.browse">לדגמים</a>
+    </div>
+    <div class="cart-foot" id="cartFoot">
+      <p class="cart-note" data-t="cart.note">המחיר הסופי נקבע לפי מידה ובד. נחזור אליכם בוואטסאפ עם כל הפרטים.</p>
+      <a class="btn btn-primary" id="cartSend" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg><span data-t="cart.send">שלחו הזמנה בוואטסאפ</span></a>
+    </div>
+  </div>
+</dialog>
+
+<p class="sr" aria-live="polite" id="live"></p>
 
 <script>
 /* מספר הוואטסאפ של העסק – להחליף במספר הנייד האמיתי (פורמט בינלאומי, בלי +) */
@@ -356,65 +447,79 @@ const WAZE_URL = 'https://waze.com/ul?q=' + encodeURIComponent('רהיטי עא�
 
 const T = {
   he: {
-    'doc.title':'רהיטי עאלמיה | ספות ופינות ישיבה בייצור מקומי',
+    'doc.title':'רהיטי עאלמיה | ספות ופינות ישיבה',
     'nav.models':'הדגמים','nav.visit':'אולם תצוגה',
     'hero.title':'הבית יפה יותר<br>עם <em>עאלמיה</em>',
-    'hero.sub':'ספות ופינות ישיבה בייצור מקומי, בכל מידה ובכל צבע.',
+    'hero.hint':'הקישו על כרית כדי לראות את הדגם',
+    'hero.sub':'ספות, פינות ושולחנות בכל מידה ובכל צבע. בחרו, הוסיפו לסל ושלחו לנו בוואטסאפ.',
     'hero.cta':'לדגמים שלנו',
-    'perk1':'ייצור מקומי','perk2':'אחריות לשנים','perk3':'משלוח עד הבית',
-    'models.h':'הדגמים שלנו','models.p':'בחרו סוג, והקישו על דגם כדי לשאול עליו.',
-    'cat.all':'הכל','cat.corner':'פינות','cat.sofa':'ספות','cat.table':'שולחנות','filter':'סינון לפי סוג','deal':'מבצע','price.was':'במקום',
+    'models.h':'הדגמים שלנו','models.p':'בחרו סוג, והוסיפו לסל עם ה־+.',
+    'cat.all':'הכל','cat.corner':'פינות','cat.sofa':'ספות','cat.table':'שולחנות','filter':'סינון לפי סוג',
+    'deal':'מבצע','measure':'מחיר לפי מידה',
+    'add':'הוסיפו לסל','added':'נוסף לסל','ask':'שאלו בוואטסאפ','close':'סגירה',
+    'addAria':n=>`הוסיפו לסל: ${n}`,
+    'cart':n=>n ? `סל, ${n} פריטים` : 'סל',
+    'cart.title':'הסל שלי','cart.empty':'הסל ריק עדיין.','cart.browse':'לדגמים',
+    'cart.note':'המחיר הסופי נקבע לפי מידה ובד. נחזור אליכם בוואטסאפ עם כל הפרטים.',
+    'cart.send':'שלחו הזמנה בוואטסאפ','less':'פחות','more':'עוד','remove':'הסרה',
     'vis.h':'בואו לאולם התצוגה','vis.p':'עין איברהים, אום אל-פחם. עשרות דגמים שאפשר לשבת עליהם לפני שמחליטים.',
     'vis.waze':'נווטו ב-Waze','vis.video':'סרטון מאולם התצוגה',
     'foot.rights':'© 2026 רהיטי עאלמיה','foot.credit':'עיצוב ובניית אתר: Nexora',
     'bar.call':'חייגו','bar.wa':'וואטסאפ','bar.waze':'נווטו',
-    'sheet.wa':'שאלו בוואטסאפ','sheet.call':'התקשרו','sheet.close':'סגירה',
     'wa.general':'שלום, הגעתי מהאתר ואשמח לפרטים על הרהיטים.',
     'wa.product':n=>`שלום, אני מתעניין/ת בדגם "${n}". אפשר לקבל פרטים?`,
+    'wa.order':lines=>`שלום, אשמח להזמין:\n${lines}\nאשמח לפרטים ולמחיר סופי.`
   },
   ar: {
-    'doc.title':'العالمية للأثاث | كنبايات وزوايا صناعة محلية',
+    'doc.title':'العالمية للأثاث | كنبايات وزوايا',
     'nav.models':'الموديلات','nav.visit':'المعرض',
     'hero.title':'مع <em>العالمية</em><br>بيتك أحلى',
-    'hero.sub':'كنبايات وزوايا صناعة محلية، بأي مقاس وأي لون.',
+    'hero.hint':'اضغط على المخدة لتشوف الموديل',
+    'hero.sub':'كنبايات، زوايا وطاولات بأي مقاس وأي لون. اختر، أضف إلى السلة وأرسل لنا عبر واتساب.',
     'hero.cta':'شوف الموديلات',
-    'perk1':'صناعة محلية','perk2':'ضمان لسنوات','perk3':'توصيل للبيت',
-    'models.h':'موديلاتنا','models.p':'اختر النوع، واضغط على الموديل لتسأل عنه.',
-    'cat.all':'الكل','cat.corner':'زوايا','cat.sofa':'كنبايات','cat.table':'طاولات','filter':'تصفية حسب النوع','deal':'عرض','price.was':'بدل',
+    'models.h':'موديلاتنا','models.p':'اختر النوع، وأضف إلى السلة بزر +.',
+    'cat.all':'الكل','cat.corner':'زوايا','cat.sofa':'كنبايات','cat.table':'طاولات','filter':'تصفية حسب النوع',
+    'deal':'عرض','measure':'السعر حسب المقاس',
+    'add':'أضف إلى السلة','added':'تمت الإضافة','ask':'اسأل عبر واتساب','close':'إغلاق',
+    'addAria':n=>`أضف إلى السلة: ${n}`,
+    'cart':n=>n ? `السلة، ${n} قطع` : 'السلة',
+    'cart.title':'سلّتي','cart.empty':'السلة فارغة.','cart.browse':'شوف الموديلات',
+    'cart.note':'السعر النهائي حسب المقاس والقماش. نرد عليك عبر واتساب بكل التفاصيل.',
+    'cart.send':'أرسل الطلب عبر واتساب','less':'أقل','more':'أكثر','remove':'حذف',
     'vis.h':'زورونا في المعرض','vis.p':'عين إبراهيم، أم الفحم. عشرات الموديلات تقدر تجرّبها قبل ما تقرّر.',
     'vis.waze':'وصّلني بـ Waze','vis.video':'فيديو من المعرض',
     'foot.rights':'© 2026 العالمية للأثاث','foot.credit':'تصميم وبناء الموقع: Nexora',
     'bar.call':'اتصل','bar.wa':'واتساب','bar.waze':'Waze',
-    'sheet.wa':'اسأل عبر واتساب','sheet.call':'اتصل','sheet.close':'إغلاق',
     'wa.general':'مرحبا، وصلت من الموقع وبدي تفاصيل عن الأثاث.',
     'wa.product':n=>`مرحبا، أنا مهتم/ة بموديل "${n}". ممكن تفاصيل؟`,
+    'wa.order':lines=>`مرحبا، بدي أطلب:\n${lines}\nبدي تفاصيل وسعر نهائي.`
   }
 };
 
 const CATS = ['all','corner','sofa','table'];
 const PRODUCTS = [
-  {id:'family-u', cat:'corner', img:'img/family-u.jpg',
+  {id:'family-u', cat:'corner', img:'img/family-u.jpg', pos:'50%',
     he:['פינת U משפחתית','עור בגוון קוניאק עם בד בהיר, מקום לכל המשפחה.'],
     ar:['زاوية U عائلية','جلد بلون الكونياك مع قماش فاتح، مكان لكل العائلة.']},
-  {id:'summer', cat:'corner', img:'img/summer.jpg', price:4990,
+  {id:'summer', cat:'corner', img:'img/summer.jpg', price:4990, pos:'52%',
     he:['פינה מודולרית – קיץ 2026','בוקלה בגוון חול עם שזלונג עמוק.'],
     ar:['زاوية معيارية – صيف 2026','بوكليه بلون الرمل مع شيزلونج عميق.']},
-  {id:'u-channel', cat:'corner', img:'img/u-channel.jpg',
+  {id:'u-channel', cat:'corner', img:'img/u-channel.jpg', pos:'45%',
     he:['פינה בתפרים אנכיים','ריפוד רך וידיות מצופות עץ אגוז.'],
     ar:['زاوية بخياطة عمودية','تنجيد ناعم ومساند من خشب الجوز.']},
-  {id:'cloud', cat:'sofa', img:'img/cloud.jpg',
+  {id:'cloud', cat:'sofa', img:'img/cloud.jpg', pos:'38%',
     he:['ספת ענן','בוקלה לבן, רכה במיוחד.'],
     ar:['كنبة الغيمة','بوكليه أبيض، طرية جداً.']},
-  {id:'modular', cat:'sofa', img:'img/modular.jpg',
+  {id:'modular', cat:'sofa', img:'img/modular.jpg', pos:'25%',
     he:['סלון בוקלה מודולרי','חלקים נפרדים שמסדרים לפי החדר.'],
     ar:['صالون بوكليه معياري','قطع منفصلة ترتّبها حسب الغرفة.']},
-  {id:'gray-corner', cat:'corner', img:'img/gray-corner.jpg',
+  {id:'gray-corner', cat:'corner', img:'img/gray-corner.jpg', pos:'42%',
     he:['פינה אפורה עם שזלונג','בד עמיד לשימוש יומיומי.'],
     ar:['زاوية رمادية مع شيزلونج','قماش متين للاستعمال اليومي.']},
-  {id:'cognac', cat:'corner', img:'img/cognac.jpg',
+  {id:'cognac', cat:'corner', img:'img/cognac.jpg', pos:'30%',
     he:['פינה בז׳ עם עור קוניאק','בד בז׳ עם עיטורי עור.'],
     ar:['زاوية بيج مع جلد كونياك','قماش بيج مع تفاصيل جلد.']},
-  {id:'dining', cat:'table', img:'img/dining.jpg',
+  {id:'dining', cat:'table', img:'img/dining.jpg', pos:'50%',
     he:['פינת אוכל עגולה','שולחן שיש ושישה כיסאות.'],
     ar:['طاولة سفرة دائرية','طاولة رخام وستة كراسٍ.']},
   {id:'armchair', cat:'sofa', img:'img/armchair.jpg',
@@ -430,6 +535,9 @@ const PRODUCTS = [
     he:['שולחן סלון מעץ מלא','עץ טבעי בגוונים חמים.'],
     ar:['طاولة صالون خشب','خشب طبيعي بألوان دافئة.']}
 ];
+/* הדגמים שמתחלפים בתוך שתי הכריות של הספה בפתיח */
+const CUSHION_SETS = [['summer','cloud','family-u','modular'], ['gray-corner','u-channel','dining','cognac']];
+
 const $ = (s, r=document) => r.querySelector(s);
 const $$ = (s, r=document) => [...r.querySelectorAll(s)];
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -441,21 +549,87 @@ const t = k => T[lang][k];
 const waLink = msg => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
 const fmt = n => n.toLocaleString('en-US') + ' ₪';
 const byId = id => PRODUCTS.find(p => p.id === id);
+const say = msg => { const l = $('#live'); l.textContent = ''; setTimeout(() => l.textContent = msg, 50); };
+
+/* ---------- סל ---------- */
+let cart = [];
+try { cart = JSON.parse(localStorage.getItem('alamiya-cart')) || []; } catch (e) {}
+cart = cart.filter(i => i && byId(i.id) && i.qty > 0);
+const saveCart = () => { try { localStorage.setItem('alamiya-cart', JSON.stringify(cart)); } catch (e) {} };
+const cartQty = () => cart.reduce((a, i) => a + i.qty, 0);
+
+function addToCart(id, rect, src) {
+  const item = cart.find(i => i.id === id);
+  if (item) item.qty = Math.min(9, item.qty + 1); else cart.push({id, qty: 1});
+  saveCart();
+  if (rect && !reduce) fly(rect, src, () => updateCartBadge(true)); else updateCartBadge(true);
+  say(t('added') + ': ' + byId(id)[lang][0]);
+}
+function updateCartBadge(bump) {
+  const n = cartQty(), c = $('#cartCount'), b = $('#cartBtn');
+  c.textContent = n; c.hidden = !n;
+  b.setAttribute('aria-label', t('cart')(n));
+  if (bump) { b.classList.remove('bump'); void b.offsetWidth; b.classList.add('bump'); }
+}
+/* תמונת הדגם עפה בקשת אל כפתור הסל */
+function fly(from, src, done) {
+  const to = $('#cartBtn').getBoundingClientRect();
+  const f = document.createElement('img');
+  f.src = src; f.className = 'flyer'; f.alt = '';
+  Object.assign(f.style, {left: from.left + 'px', top: from.top + 'px', width: from.width + 'px', height: from.height + 'px'});
+  document.body.appendChild(f);
+  const dx = to.left + to.width / 2 - (from.left + from.width / 2), dy = to.top + to.height / 2 - (from.top + from.height / 2);
+  const s = 36 / from.width;
+  f.animate([
+    {transform: 'translate(0,0) scale(1)', opacity: 1},
+    {transform: `translate(${dx * .45}px, ${dy * .45 - 90}px) scale(${(1 + s) / 2.2}) rotate(-10deg)`, opacity: 1, offset: .5},
+    {transform: `translate(${dx}px, ${dy}px) scale(${s})`, opacity: .3}
+  ], {duration: 800, easing: 'cubic-bezier(.5,0,.3,1)'}).onfinish = () => { f.remove(); done(); };
+}
+function renderCart() {
+  const list = $('#cartList'), empty = !cart.length;
+  $('#cartEmpty').hidden = !empty; $('#cartFoot').hidden = empty; list.hidden = empty;
+  list.innerHTML = cart.map(i => {
+    const p = byId(i.id);
+    return `<li data-id="${i.id}">
+      <img src="${p.img}" alt="">
+      <div><b>${p[lang][0]}</b>${p.price ? `<span class="price">${fmt(p.price)}</span>` : `<small>${t('measure')}</small>`}</div>
+      <div class="qty">
+        <button type="button" data-q="1" aria-label="${t('more')}"><svg><use href="#i-plus"/></svg></button>
+        <output>${i.qty}</output>
+        <button type="button" data-q="-1" aria-label="${i.qty > 1 ? t('less') : t('remove')}"><svg><use href="${i.qty > 1 ? '#i-minus' : '#i-trash'}"/></svg></button>
+      </div>
+    </li>`;
+  }).join('');
+  const lines = cart.map(i => { const p = byId(i.id); return `• ${p[lang][0]} × ${i.qty}${p.price ? ` (${fmt(p.price)})` : ''}`; }).join('\n');
+  $('#cartSend').href = waLink(t('wa.order')(lines));
+}
+$('#cartList').addEventListener('click', e => {
+  const b = e.target.closest('[data-q]'); if (!b) return;
+  const id = b.closest('li').dataset.id, item = cart.find(i => i.id === id);
+  item.qty = Math.min(9, item.qty + +b.dataset.q);
+  if (item.qty <= 0) cart = cart.filter(i => i !== item);
+  saveCart(); renderCart(); updateCartBadge(false);
+});
+$('#cartBtn').addEventListener('click', () => { renderCart(); openDialog($('#cart')); });
 
 /* ---------- דגמים ---------- */
-function renderGrid() {
-  $('#grid').innerHTML = PRODUCTS.map(p => `
-    <li data-cat="${p.cat}">
-      <button type="button" class="card" data-id="${p.id}">
-        <figure><img src="${p.img}" alt="" loading="lazy">${p.price ? `<span class="badge">${t('deal')}</span>` : ''}</figure>
-        <span class="cb"><h3>${p[lang][0]}</h3>${p.price ? `<span class="price">${fmt(p.price)}</span>` : ''}</span>
-      </button>
-    </li>`).join('');
-  filter(false);
-}
 let cat = 'all';
 function renderChips() {
   $('#chips').innerHTML = CATS.map(c => `<button type="button" class="chip" data-cat="${c}" aria-pressed="${c === cat}">${t('cat.' + c)}</button>`).join('');
+}
+function renderGrid() {
+  $('#grid').innerHTML = PRODUCTS.map(p => `
+    <li data-cat="${p.cat}">
+      <div class="card">
+        <button type="button" class="card-open" data-id="${p.id}">
+          <figure><img src="${p.img}" alt="" loading="lazy">${p.price ? `<span class="badge">${t('deal')}</span>` : ''}</figure>
+          <span class="cb"><h3>${p[lang][0]}</h3>${p.price ? `<span class="price">${fmt(p.price)}</span>` : ''}</span>
+        </button>
+        <button type="button" class="add" data-add="${p.id}" aria-label="${t('addAria')(p[lang][0])}"><svg><use href="#i-plus"/></svg></button>
+      </div>
+    </li>`).join('');
+  filter(false);
 }
 function filter(animate) {
   let i = 0;
@@ -472,10 +646,40 @@ $('#chips').addEventListener('click', e => {
   $$('.chip').forEach(c => c.setAttribute('aria-pressed', c === b));
   filter(true);
 });
+$('#grid').addEventListener('click', e => {
+  const add = e.target.closest('.add');
+  if (add) {
+    const img = add.closest('.card').querySelector('img');
+    addToCart(add.dataset.add, img.getBoundingClientRect(), img.currentSrc || img.src);
+    add.classList.remove('done'); void add.offsetWidth; add.classList.add('done');
+    add.querySelector('use').setAttribute('href', '#i-check');
+    clearTimeout(add._t);
+    add._t = setTimeout(() => { add.classList.remove('done'); add.querySelector('use').setAttribute('href', '#i-plus'); }, 1400);
+    return;
+  }
+  const b = e.target.closest('.card-open'); if (b) openSheet(b.dataset.id);
+});
 
-/* ---------- חלונית דגם ---------- */
+/* ---------- חלוניות ---------- */
 const sheet = $('#sheet');
 let current = null;
+function openDialog(d) {
+  d.classList.remove('closing');
+  d.showModal();
+  $('.sheet-in', d).scrollTop = 0;
+  $('#dock').classList.add('hide');
+}
+function closeDialog(d, then) {
+  if (!d.open || d.classList.contains('closing')) return;
+  if (reduce) { d.close(); if (then) then(); return; }
+  d.classList.add('closing');
+  d.addEventListener('animationend', () => { d.classList.remove('closing'); d.close(); if (then) then(); }, {once: true});
+}
+$$('dialog.sheet').forEach(d => {
+  d.addEventListener('close', () => { if (!$$('dialog[open]').length) $('#dock').classList.remove('hide'); d.style.transform = ''; });
+  d.addEventListener('cancel', e => { e.preventDefault(); closeDialog(d); });
+  d.addEventListener('click', e => { if (e.target === d || e.target.closest('.js-close')) closeDialog(d); });
+});
 function fillSheet() {
   $('#sheetImg').src = current.img;
   $('#sheetImg').alt = current[lang][0];
@@ -485,25 +689,12 @@ function fillSheet() {
   $('#sheetDesc').textContent = current[lang][1];
   $('#sheetWa').href = waLink(t('wa.product')(current[lang][0]));
 }
-function openSheet(id) {
-  current = byId(id);
-  fillSheet();
-  sheet.classList.remove('closing');
-  sheet.showModal();
-  $('#sheetIn').scrollTop = 0;
-  $('#dock').classList.add('hide');
-}
-function closeSheet() {
-  if (!sheet.open || sheet.classList.contains('closing')) return;
-  if (reduce) { sheet.close(); return; }
-  sheet.classList.add('closing');
-  sheet.addEventListener('animationend', () => { sheet.classList.remove('closing'); sheet.close(); }, {once: true});
-}
-sheet.addEventListener('close', () => { $('#dock').classList.remove('hide'); sheet.style.transform = ''; });
-sheet.addEventListener('cancel', e => { e.preventDefault(); closeSheet(); });
-sheet.addEventListener('click', e => { if (e.target === sheet) closeSheet(); });
-$('#sheetX').addEventListener('click', closeSheet);
-$('#grid').addEventListener('click', e => { const b = e.target.closest('.card'); if (b) openSheet(b.dataset.id); });
+function openSheet(id) { current = byId(id); fillSheet(); openDialog(sheet); }
+$('#sheetAdd').addEventListener('click', () => {
+  const img = $('#sheetImg'), rect = img.getBoundingClientRect(), src = img.currentSrc || img.src, id = current.id;
+  /* החלונית נסגרת, והתמונה ממשיכה לעוף לסל */
+  closeDialog(sheet, () => addToCart(id, rect, src));
+});
 /* גרירה של התמונה למטה סוגרת את החלונית בנייד */
 (() => {
   let y0 = null, dy = 0;
@@ -517,6 +708,37 @@ $('#grid').addEventListener('click', e => { const b = e.target.closest('.card');
   });
 })();
 
+/* ---------- הספה בפתיח: דגמים מתחלפים בתוך הכריות ---------- */
+const slots = $$('.cushion');
+const slotIdx = [0, 0];
+function showInSlot(k, animate) {
+  const p = byId(CUSHION_SETS[k][slotIdx[k]]), btn = slots[k], img = $('img', btn);
+  const set = () => { img.src = p.img; img.style.objectPosition = `${p.pos || '50%'} 50%`; btn.setAttribute('aria-label', p[lang][0]); };
+  if (!animate) { set(); return; }
+  btn.classList.remove('swap'); void btn.offsetWidth; btn.classList.add('swap');
+  setTimeout(set, 230);
+  setTimeout(() => btn.classList.remove('swap'), 720);
+}
+CUSHION_SETS.flat().forEach(id => { const i = new Image(); i.src = byId(id).img; });
+slots.forEach(b => b.addEventListener('click', () => { const k = +b.dataset.slot; openSheet(CUSHION_SETS[k][slotIdx[k]]); }));
+let tick = 0, heroTimer = null;
+function startCushions() {
+  if (reduce) return;
+  clearInterval(heroTimer);
+  heroTimer = setInterval(() => { const k = tick++ % 2; slotIdx[k] = (slotIdx[k] + 1) % CUSHION_SETS[k].length; showInSlot(k, true); }, 2600);
+}
+document.addEventListener('visibilitychange', () => document.hidden ? clearInterval(heroTimer) : startCushions());
+/* במחשב: התמונות בתוך הכריות זזות קצת עם העכבר, כמו חלון */
+if (matchMedia('(hover:hover)').matches && !reduce) {
+  const hero = $('.hero'), sofa = $('#lsofa');
+  hero.addEventListener('pointermove', e => {
+    const r = sofa.getBoundingClientRect();
+    sofa.style.setProperty('--px', Math.max(-1, Math.min(1, (e.clientX - r.left - r.width / 2) / r.width * 2)).toFixed(3));
+    sofa.style.setProperty('--py', Math.max(-1, Math.min(1, (e.clientY - r.top - r.height / 2) / r.height * 2)).toFixed(3));
+  });
+  hero.addEventListener('pointerleave', () => { sofa.style.setProperty('--px', 0); sofa.style.setProperty('--py', 0); });
+}
+
 /* ---------- שפה ---------- */
 function applyLang() {
   document.documentElement.lang = lang;
@@ -526,7 +748,8 @@ function applyLang() {
   $$('.sofa-toggle button').forEach(b => b.setAttribute('aria-pressed', b.dataset.lang === lang));
   $$('.js-wa').forEach(a => a.href = waLink(t('wa.general')));
   $$('.js-waze').forEach(a => a.href = WAZE_URL);
-  renderChips(); renderGrid();
+  renderChips(); renderGrid(); renderCart(); updateCartBadge(false);
+  showInSlot(0, false); showInSlot(1, false);
   if (sheet.open && current) fillSheet();
 }
 $$('.sofa-toggle button').forEach(b => b.addEventListener('click', () => {
@@ -544,7 +767,7 @@ const header = $('.top');
 addEventListener('scroll', () => header.classList.toggle('scrolled', scrollY > 8), {passive: true});
 if ('IntersectionObserver' in window) {
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {rootMargin: '0px 0px -8% 0px'});
-  $$('.rv:not(.in)').forEach(el => io.observe(el));
+  $$('.rv').forEach(el => io.observe(el));
   const vid = $('#showroom');
   const vo = new IntersectionObserver(es => es.forEach(e => {
     if (e.isIntersecting && !reduce) { vid.preload = 'auto'; vid.play().catch(() => {}); } else vid.pause();
@@ -556,6 +779,7 @@ if ('IntersectionObserver' in window) {
 }
 
 applyLang();
+setTimeout(startCushions, 1800);
 </script>
 </body>
 </html>
