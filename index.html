@@ -115,10 +115,9 @@ body.switching main{opacity:0}
 .hero h1{grid-area:title;font-size:clamp(2.3rem,10.5vw,4.6rem);line-height:1}
 .hero h1 em{font-style:normal;color:var(--teal)}
 .hero-rest{grid-area:rest}
-.hero-sub{margin-top:18px;font-size:1.05rem;color:var(--muted)}
-.hero .btn{margin-top:20px}
+.hero .btn{margin-top:0}
 
-.lsofa{grid-area:sofa;position:relative;width:100%;max-width:520px;margin:22px auto 58px;aspect-ratio:120/100}
+.lsofa{grid-area:sofa;position:relative;width:100%;max-width:520px;margin:22px auto 52px;aspect-ratio:120/100}
 .lsofa .p{position:absolute;background:var(--teal);border-radius:12px}
 .lsofa .arm{top:40%;height:56%;width:10.8%}
 .lsofa .a1{left:1.7%}
@@ -150,6 +149,7 @@ body.switching main{opacity:0}
 
 /* ---------- סקשנים ---------- */
 .sec{padding-block:64px}
+#models{padding-top:36px}
 .sec-head h2{font-size:clamp(2rem,8.5vw,3rem)}
 .sec-head p{margin-top:8px;color:var(--muted)}
 
@@ -190,13 +190,7 @@ body.switching main{opacity:0}
 .pprice .price{font-size:1.7rem;color:var(--teal)}
 .pprice small{font-size:1rem;color:var(--muted);font-weight:500}
 .pdesc{margin-top:16px;font-size:1.07rem;line-height:1.75}
-.specs{list-style:none;padding:0;margin:24px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.specs li{background:var(--paper);border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:4px}
-.specs svg{width:26px;height:26px;color:var(--teal);margin-bottom:4px}
-.specs b{font-size:.95rem;line-height:1.3}
-.specs span{font-size:.88rem;color:var(--muted);line-height:1.35}
-.js-motion .specs li{animation:cardIn .5s var(--ease) backwards;animation-delay:calc(.3s + var(--i)*70ms)}
-.pask{margin-top:18px;width:100%}
+.pask{margin-top:22px;width:100%}
 .pbar{position:fixed;z-index:45;inset-inline:12px;bottom:calc(12px + env(safe-area-inset-bottom))}
 .pbar .btn{width:100%;min-height:60px;font-size:1.08rem;box-shadow:0 10px 30px rgba(11,40,45,.28)}
 .pbar .btn.done{background:var(--teal);color:#fff}
@@ -281,7 +275,6 @@ dialog.sheet.closing{animation:sheetDown .25s ease-in forwards}
   .card .cb{padding:16px 18px 18px}
   .chips{margin-inline:0;padding-inline:0}
   .actions{grid-template-columns:auto auto;justify-content:start}
-  .specs{grid-template-columns:repeat(4,1fr)}
 }
 @media (min-width:960px){
   .wrap{padding-inline:32px}
@@ -289,6 +282,8 @@ dialog.sheet.closing{animation:sheetDown .25s ease-in forwards}
   .dock{display:none}
   footer{padding-bottom:40px}
   .sec{padding-block:96px}
+  #models{padding-top:64px}
+  .hero .btn{margin-top:22px}
   .hero .wrap{grid-template-columns:1fr 1.1fr;grid-template-areas:"title sofa" "rest sofa";column-gap:56px;align-content:center;min-height:calc(86vh - 64px);padding-block:40px}
   .hero h1{align-self:end}
   .lsofa{margin:0;max-width:560px;justify-self:center;align-self:center}
@@ -297,7 +292,6 @@ dialog.sheet.closing{animation:sheetDown .25s ease-in forwards}
   .product{padding-bottom:80px}
   .pgrid{grid-template-columns:1.15fr 1fr;gap:48px;align-items:start}
   .pimg{position:sticky;top:84px}
-  .specs{grid-template-columns:1fr 1fr}
   .pbar{position:static;margin-top:26px}
   .pbar .btn{box-shadow:0 6px 16px rgba(246,165,74,.35)}
   .related .grid{grid-template-columns:repeat(4,1fr)}
@@ -329,10 +323,6 @@ dialog.sheet.closing{animation:sheetDown .25s ease-in forwards}
     <symbol id="i-minus" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M5 12h14"/></symbol>
     <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
     <symbol id="i-trash" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4.5 7h15M9.5 7V4.5h5V7M6.5 7l1 13h9l1-13"/></symbol>
-    <symbol id="i-ruler" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" d="M3 16.5L16.5 3 21 7.5 7.5 21z M7 12.5l2 2 M10 9.5l2 2 M13 6.5l2 2"/></symbol>
-    <symbol id="i-palette" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 3.5a8.5 8.5 0 1 0 0 17c1.2 0 1.8-.8 1.8-1.7 0-1.2-1-1.6-1-2.6 0-.9.7-1.5 1.7-1.5h2.2a3.8 3.8 0 0 0 3.8-3.8C20.5 7 16.7 3.5 12 3.5z"/><circle cx="7.8" cy="11" r="1.3" fill="currentColor"/><circle cx="10.5" cy="7.3" r="1.3" fill="currentColor"/><circle cx="15" cy="7.8" r="1.3" fill="currentColor"/></symbol>
-    <symbol id="i-truck" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M2.5 6h11v10h-11z M13.5 9.5h4l3.5 3.5v3h-7.5"/><circle cx="6.5" cy="17.5" r="2" fill="#fff" stroke="currentColor" stroke-width="1.8"/><circle cx="17" cy="17.5" r="2" fill="#fff" stroke="currentColor" stroke-width="1.8"/></symbol>
-    <symbol id="i-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" d="M12 3l8 3v6c0 4.8-3.4 8-8 9-4.6-1-8-4.2-8-9V6z M8.5 12l2.5 2.5 4.5-5"/></symbol>
     <symbol id="logo" viewBox="0 0 120 80">
       <rect style="fill:var(--mf)" x="4" y="30" width="14" height="46" rx="4"/>
       <rect style="fill:var(--mf)" x="102" y="30" width="14" height="46" rx="4"/>
@@ -382,7 +372,6 @@ dialog.sheet.closing{animation:sheetDown .25s ease-in forwards}
           <p class="lsofa-hint" data-t="hero.hint">הקישו על כרית כדי לראות את הדגם</p>
         </div>
         <div class="hero-rest">
-          <p class="hero-sub" data-t="hero.sub">ספות, פינות ושולחנות בכל מידה ובכל צבע. בחרו, הוסיפו לסל ושלחו לנו בוואטסאפ.</p>
           <a class="btn btn-primary" href="#models" data-t="hero.cta">לדגמים שלנו</a>
         </div>
       </div>
@@ -431,7 +420,6 @@ dialog.sheet.closing{animation:sheetDown .25s ease-in forwards}
           <h1 id="pName"></h1>
           <p class="pprice" id="pPrice"></p>
           <p class="pdesc" id="pDesc"></p>
-          <ul class="specs" id="pSpecs"></ul>
           <a class="btn btn-ghost pask" id="pAsk" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg><span data-t="ask">שאלו אותנו בוואטסאפ</span></a>
           <div class="pbar"><button type="button" class="btn btn-primary" id="pAdd"></button></div>
         </div>
@@ -499,16 +487,11 @@ const T = {
     'nav.models':'הדגמים','nav.visit':'אולם תצוגה',
     'hero.title':'הבית יפה יותר<br>עם <em>עאלמיה</em>',
     'hero.hint':'הקישו על כרית כדי לראות את הדגם',
-    'hero.sub':'ספות, פינות ושולחנות בכל מידה ובכל צבע. בחרו, הוסיפו לסל ושלחו לנו בוואטסאפ.',
     'hero.cta':'לדגמים שלנו',
     'models.h':'הדגמים שלנו','models.p':'הקישו על דגם לכל הפרטים, או הוסיפו לסל עם ה־+.',
     'cat.all':'הכל','cat.corner':'פינות','cat.sofa':'ספות','cat.table':'שולחנות','filter':'סינון לפי סוג',
     'deal':'מבצע','measure':'מחיר לפי מידה',
     'back':'חזרה','related':'עוד מאותו סוג',
-    'spec.size':'מידות','spec.size.v':'לפי המידה שלכם',
-    'spec.color':'צבע ובד','spec.color.v':'לבחירה באולם התצוגה',
-    'spec.ship':'משלוח','spec.ship.v':'לכל האזורים',
-    'spec.warranty':'אחריות','spec.warranty.v':'לשנים',
     'add':'הוסיפו לסל','added':'נוסף לסל','addMore':'נוסף! להוסיף עוד?','ask':'שאלו אותנו בוואטסאפ','close':'סגירה',
     'addAria':n=>`הוסיפו לסל: ${n}`,
     'cart':n=>n ? `סל, ${n} פריטים` : 'סל',
@@ -528,16 +511,11 @@ const T = {
     'nav.models':'الموديلات','nav.visit':'المعرض',
     'hero.title':'مع <em>العالمية</em><br>بيتك أحلى',
     'hero.hint':'اضغط على المخدة لتشوف الموديل',
-    'hero.sub':'كنبايات، زوايا وطاولات بأي مقاس وأي لون. اختر، أضف إلى السلة وأرسل لنا عبر واتساب.',
     'hero.cta':'شوف الموديلات',
     'models.h':'موديلاتنا','models.p':'اضغط على الموديل لكل التفاصيل، أو أضفه إلى السلة بزر +.',
     'cat.all':'الكل','cat.corner':'زوايا','cat.sofa':'كنبايات','cat.table':'طاولات','filter':'تصفية حسب النوع',
     'deal':'عرض','measure':'السعر حسب المقاس',
     'back':'رجوع','related':'موديلات مشابهة',
-    'spec.size':'المقاس','spec.size.v':'حسب مقاسك',
-    'spec.color':'اللون والقماش','spec.color.v':'حسب اختيارك في المعرض',
-    'spec.ship':'التوصيل','spec.ship.v':'لكافة المناطق',
-    'spec.warranty':'الضمان','spec.warranty.v':'لسنوات',
     'add':'أضف إلى السلة','added':'تمت الإضافة','addMore':'تمت الإضافة! بدك كمان؟','ask':'اسألنا عبر واتساب','close':'إغلاق',
     'addAria':n=>`أضف إلى السلة: ${n}`,
     'cart':n=>n ? `السلة، ${n} قطع` : 'السلة',
@@ -593,7 +571,6 @@ const PRODUCTS = [
     he:['שולחן סלון מעץ מלא','שולחן סלון מעץ מלא בגוונים חמים, עם רגלי עץ עבות. יציב ומתאים לסלון עם פינה גדולה.'],
     ar:['طاولة صالون خشب','طاولة صالون من الخشب الطبيعي بألوان دافئة، بأرجل خشب عريضة. متينة ومناسبة لصالون مع زاوية كبيرة.']}
 ];
-const SPECS = [['i-ruler','size'],['i-palette','color'],['i-truck','ship'],['i-shield','warranty']];
 /* הדגמים שמתחלפים בתוך שתי הכריות של הספה בפתיח */
 const CUSHION_SETS = [['summer','cloud','family-u','modular'], ['gray-corner','u-channel','dining','cognac']];
 
@@ -782,7 +759,6 @@ function renderProduct(p) {
   $('#pName').textContent = name;
   $('#pPrice').innerHTML = p.price ? `<span class="price">${fmt(p.price)}</span>` : `<small>${t('measure')}</small>`;
   $('#pDesc').textContent = desc;
-  $('#pSpecs').innerHTML = SPECS.map(([icon, k], i) => `<li style="--i:${i}"><svg><use href="#${icon}"/></svg><b>${t('spec.' + k)}</b><span>${t('spec.' + k + '.v')}</span></li>`).join('');
   $('#pAsk').href = waLink(t('wa.product')(name));
   setAddLabel(false);
   const rel = PRODUCTS.filter(x => x.cat === p.cat && x.id !== p.id).slice(0, 4);
